@@ -1,0 +1,4 @@
+const sharp = require('sharp');
+const path = require('node:path');
+const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024"><rect x="42" y="42" width="940" height="940" rx="214" fill="#355c48"/><g transform="rotate(-7 512 512)"><rect x="261" y="227" width="526" height="610" rx="44" fill="#b7c7ad"/><rect x="221" y="187" width="526" height="610" rx="44" fill="#f7f7f2"/><path d="M292 679h383" stroke="#cbd5c3" stroke-width="5"/><text x="471" y="573" font-family="Georgia,serif" font-size="318" text-anchor="middle" letter-spacing="-22" fill="#355c48">20</text><path d="m457 726 14 14 26-29" fill="none" stroke="#799373" stroke-linecap="round" stroke-linejoin="round" stroke-width="8"/></g></svg>`;
+sharp(Buffer.from(svg)).png().toFile(path.join(__dirname, '../assets/icon.png'));
